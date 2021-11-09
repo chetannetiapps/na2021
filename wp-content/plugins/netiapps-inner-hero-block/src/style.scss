@@ -1,0 +1,29 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-netiapps-blocks-netiapps-inner-hero-block {
+	.hero-block {
+	  position: relative;
+	  height: 300px;
+	  width: 100%;
+	  color: #fff;
+	  h1 {
+		padding-top: 40px;
+		font-size: 32px;
+		position: relative;
+		z-index: 1;
+	  }
+	  img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	  }
+	}
+}

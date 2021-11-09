@@ -1,0 +1,16 @@
+{
+	"apiVersion": 2,
+	"name": "netiapps-blocks/netiapps-inner-hero-block",
+	"version": "0.1.0",
+	"title": "Netiapps Inner Hero Block",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Hero block for inner template",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "netiapps-inner-hero-block",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}
