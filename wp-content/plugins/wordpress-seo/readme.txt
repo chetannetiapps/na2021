@@ -5,7 +5,7 @@ License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: SEO, XML sitemap, Content analysis, Readability, Schema
 Tested up to: 5.8
-Stable tag: 16.8
+Stable tag: 17.5
 Requires PHP: 5.6.20
 
 Improve your WordPress SEO: Write better content and have a fully optimized WordPress site using the Yoast SEO plugin.
@@ -42,7 +42,7 @@ We know content is king, that's why Yoast SEO is famous for its **state-of-the-a
 
 * **SEO analysis**: an invaluable tool while writing SEO-friendly content with the right (focus) keyphrases in mind.
 * **Readability analysis**: ensures that humans and search engines can read and understand your content.
-* **Full language support** for: English, German, French, Dutch, Spanish, Italian, Russian, Indonesian, Polish, Portuguese, Arabic, Swedish, Hebrew, Hungarian, Turkish, Czech, Norwegian and Slovak.
+* **Full language support** for: English, German, French, Dutch, Spanish, Italian, Russian, Indonesian, Polish, Portuguese, Arabic, Swedish, Hebrew, Hungarian, Turkish, Czech, Norwegian, Slovak and Greek.
 * **A Google preview**, which shows what your listings will look like in the search results. Even on mobile devices!
 * **Innovative Schema blocks** for the WordPress block editor, so that your FAQ and HowTo content can be shown directly in the search results. Plus a breadcrumbs block to guide your users.
 * **[Premium] Internal linking blocks** to easily improve the structure of your content. Easily add a **table of contents block**, a **related links block**, a **subpages** block, or **siblings block**! Plus, we’ll keep adding these easy-to-add blocks to improve your site structure.
@@ -236,40 +236,38 @@ Your question has most likely been answered on our help center: [yoast.com/help/
 
 == Changelog ==
 
-= 16.8 =
-Release Date: July 27th, 2021
+= 17.5 =
+Release Date: November 2nd, 2021
 
-Yoast SEO 16.8 is out today! This release comes with an updated readability analysis with support for two new languages: Norwegian and Slovak. Did you know that Yoast SEO is nearing language support for twenty languages? Read more about what’s new in Yoast SEO 16.8 in [our release post](https://yoa.st/release-16-8)!
-
-Enhancements:
-
-* Completes the readability analysis for Slovak by adding the transition words, sentence beginnings and passive voice assessments.
-* Improves keyphrase recognition in Slovak by filtering out function words such as `som`, `a`, `jedna`, `že`.
-* Completes the readability analysis for Norwegian by adding the transition words, sentence beginnings and passive voice assessments.
-* Improves keyphrase recognition in Norwegian by expanding the list of function words that are filtered out.
-* Adds the first two steps of the Premium cornerstone workout.
-* Throws a notification in the plugins page to users who have an expired subscription.
-* Improves the performance of background requests (admin-ajax calls).
-
-Bugfixes:
-
-* Fixes a bug where paginated static frontpages would fail to output a valid breadcrumb.
-* Fixes a bug where the image selectors in the search appearance and social settings did not have a screen reader text.
-
-= 16.7 =
-Release Date: July 13th, 2021
-
-Meet Yoast SEO 16.7! This release comes with extended support for headless WordPress. Yoast SEO comes with a REST API that developers can use to access our metadata in a headless WordPress installation. In Yoast SEO 16.7, we’re making more data available and also in a different format: JSON. Read more about what’s new in Yoast SEO 16.7 in [our release post](https://yoa.st/release-16-7)!
+Say hello to Yoast SEO 17.5! Or maybe γεια would fit better, as this release introduces Greek readability support. Plus: you’ll also be able to find | and ~ title separators again. Happy updating! Read more about what's new in Yoast SEO 17.5 in [our release post in English](https://yoa.st/release-17-5) or [our release post in Spanish](https://yoa.st/release-17-5-spanish)!
 
 Enhancements:
 
-* Upgrades our REST API to include individual keys/values for all of our meta tags, data and schema output. Read all about it in [this in-depth explanation about our REST API](https://yoa.st/rest-api).
+* Completes the readability analysis for Greek by adding the transition words, sentence beginnings and passive voice assessments.
+* Improves keyword detection for Greek by adding a function words list.
+* Reduces the right padding of the collapsible sidebar buttons to match the block editor's new styling.
+* Restores the `|` and `~` separators.
+* Reduces the right padding of the collapsible sidebar buttons to match Gutenberg's new styling.
 
 Bugfixes:
 
-* Fixes a bug where a database entry would be added in the indexables table every time a WooCommerce order was created.
-* Fixes a bug where the SEO optimization could run indefinitely when the database contained at least 25 faulty indexables without a permalink.
-* Fixes a bug where the Advanced section and Schema tab wouldn't be visible in the metabox for Editors. Props to [jordif](https://github.com/jordif).
+* Fixes a bug where the analysis highlight button would be visible on tags, categories, and custom taxonomies even though we don't support highlighting for those types.
+* Fixes a bug where links to items on the same page were incorrectly identified as links to other pages, leading to an incorrect result on the Link keyphrase assessment.
+
+= 17.4 =
+Release Date: October 19th, 2021
+
+Yoast SEO 17.4 is out today! This release comes with several fixes and enhancements to help database performance on larger sites by cleaning up data and streamlining retrieval. Happy updating! Read more about what's new in Yoast SEO 17.4 in [our release post](https://yoa.st/release-17-4)!
+
+Enhancements:
+
+* Improves two queries used to determine whether or not a site has been fully processed using our SEO data optimization. This should prevent potential slowdowns in extremely large sites.
+
+Bugfixes:
+
+* Fixes a bug where the `url` property in the search page schema would be empty.
+* Fixes a bug where a duplicate canonical tag was output for web stories created with the Web Stories plugin. Props to [swissspidey](https://github.com/swissspidy).
+* Fixes a bug where a race condition could occur that caused the rewrite rules to be flushed on every page request when using a persistent cache like Redis. This may speed up your site’s load times if it’s using persistent caching.
 
 = Earlier versions =
 For the changelog of earlier versions, please refer to [the changelog on yoast.com](https://yoa.st/yoast-seo-changelog).
