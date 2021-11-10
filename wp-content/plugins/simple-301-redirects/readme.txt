@@ -2,9 +2,9 @@
 Contributors: wpdevteam, asif2bd, re_enter_rupok, tusharimran, scottnelle
 Tags: 301 redirects, 301, shortlinks, link shortener, links, permalink, redirects, seo redirects, url redirect, 301 redirect, url, pretty links, short links, link tracking, affiliate links, urls
 Requires at least: 5.0
-Tested up to: 5.7.1
+Tested up to: 5.8
 Requires PHP: 5.4
-Stable tag: 2.0.5
+Stable tag: 2.0.6
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -31,7 +31,7 @@ By setting up 301 redirects from your old pages to your new pages, any incoming 
 
 **◾Import Redirect Rules:** You can import redirects links in bulk from your device and upload using this plugin to manage links
 
-**◾ Export Redirect Rules:** You can also export your 301 Redirect Links in .json format to use in future
+**◾ Export Redirect Rules:** You can also export your 301 Redirect Links in .csv format to use in future
 
 ◾ **Wildcards:** It will redirect all files within a directory to the same filename in the redirected directory. To use wildcards, put an asterisk (\*) after the folder name that you want to redirect. Example:
 
@@ -99,6 +99,10 @@ Visit [WPDeveloper](https://wpdeveloper.net/) to learn more about how to do bett
 
 
 == Changelog ==
+
+= 2.0.6 - 19/10/2021 =
+* Added: CSV Import/Export option
+* Few minor bug fix and improvements
 
 = 2.0.5 - 08/07/2021 =
 * Fixed: Http mixed content issue

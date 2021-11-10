@@ -4,7 +4,7 @@
 * Plugin Name:       Permalink Manager Lite
 * Plugin URI:        https://permalinkmanager.pro?utm_source=plugin
 * Description:       Advanced plugin that allows to set-up custom permalinks (bulk editors included), slugs and permastructures (WooCommerce compatible).
-* Version:           2.2.11
+* Version:           2.2.14
 * Author:            Maciej Bis
 * Author URI:        http://maciejbis.net/
 * License:           GPL-2.0+
@@ -12,7 +12,7 @@
 * Text Domain:       permalink-manager
 * Domain Path:       /languages
 * WC requires at least: 3.0.0
-* WC tested up to:      5.2.2
+* WC tested up to:      5.6.0
 */
 
 // If this file is called directly or plugin is already defined, abort.
@@ -25,7 +25,7 @@ if(!class_exists('Permalink_Manager_Class')) {
 	// Define the directories used to load plugin files.
 	define( 'PERMALINK_MANAGER_PLUGIN_NAME', 'Permalink Manager' );
 	define( 'PERMALINK_MANAGER_PLUGIN_SLUG', 'permalink-manager' );
-	define( 'PERMALINK_MANAGER_VERSION', '2.2.11' );
+	define( 'PERMALINK_MANAGER_VERSION', '2.2.14' );
 	define( 'PERMALINK_MANAGER_FILE', __FILE__ );
 	define( 'PERMALINK_MANAGER_DIR', untrailingslashit(dirname(__FILE__)) );
 	define( 'PERMALINK_MANAGER_BASENAME', plugin_basename(__FILE__));
@@ -134,11 +134,11 @@ if(!class_exists('Permalink_Manager_Class')) {
 			// 1. Globals with data stored in DB
 			global $permalink_manager_options, $permalink_manager_uris, $permalink_manager_permastructs, $permalink_manager_redirects, $permalink_manager_external_redirects;
 
-			$this->permalink_manager_options = $permalink_manager_options = apply_filters('permalink_manager_options', get_option('permalink-manager', array()));
-			$this->permalink_manager_uris = $permalink_manager_uris = apply_filters('permalink_manager_uris', get_option('permalink-manager-uris', array()));
-			$this->permalink_manager_permastructs = $permalink_manager_permastructs = apply_filters('permalink_manager_permastructs', get_option('permalink-manager-permastructs', array()));
-			$this->permalink_manager_redirects = $permalink_manager_redirects = apply_filters('permalink_manager_redirects', get_option('permalink-manager-redirects', array()));
-			$this->permalink_manager_external_redirects = $permalink_manager_external_redirects = apply_filters('permalink_manager_external_redirects', get_option('permalink-manager-external-redirects', array()));
+			$this->permalink_manager_options = $permalink_manager_options = (array) apply_filters('permalink_manager_options', get_option('permalink-manager', array()));
+			$this->permalink_manager_uris = $permalink_manager_uris = (array) apply_filters('permalink_manager_uris', get_option('permalink-manager-uris', array()));
+			$this->permalink_manager_permastructs = $permalink_manager_permastructs = (array) apply_filters('permalink_manager_permastructs', get_option('permalink-manager-permastructs', array()));
+			$this->permalink_manager_redirects = $permalink_manager_redirects = (array) apply_filters('permalink_manager_redirects', get_option('permalink-manager-redirects', array()));
+			$this->permalink_manager_external_redirects = $permalink_manager_external_redirects = (array) apply_filters('permalink_manager_external_redirects', get_option('permalink-manager-external-redirects', array()));
 
 			// 2. Globals used to display additional content (eg. alerts)
 			global $permalink_manager_alerts, $permalink_manager_before_sections_html, $permalink_manager_after_sections_html;
@@ -176,6 +176,7 @@ if(!class_exists('Permalink_Manager_Class')) {
 					'pmxi_support' => 1,
 					'um_support' => 1,
 					'yoast_breadcrumbs' => 0,
+					'primary_category' => 1,
 					'force_custom_slugs' => 0,
 					'disable_slug_sanitization' => 0,
 					'keep_accents' => 0,
@@ -183,7 +184,7 @@ if(!class_exists('Permalink_Manager_Class')) {
 						'post_types' => array('attachment', 'tribe_events')
 					),
 					'deep_detect' => 1,
-					'ignore_drafts' => 0,
+					'ignore_drafts' => 1,
 					'edit_uris_cap' => 'publish_posts',
 				),
 				'licence' => array()

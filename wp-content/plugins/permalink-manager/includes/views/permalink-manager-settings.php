@@ -98,7 +98,7 @@ class Permalink_Manager_Settings extends Permalink_Manager_Class {
 						'input_class' => '',
 						'description' => sprintf('%s',
 							__('<strong>Please enable this option if you would like to copy the endpoint from source URL to the target URL during the canonical redirect.</strong>', 'permalink-manager')
-						),
+						)
 					),*/
 					'old_slug_redirect' => array(
 						'type' => 'single_checkbox',
@@ -201,7 +201,13 @@ class Permalink_Manager_Settings extends Permalink_Manager_Class {
 						'label' => __('Breadcrumbs support', 'permalink-manager'),
 						'input_class' => '',
 						'description' => __('If enabled, the HTML breadcrumbs will be filtered by Permalink Manager to mimic the current URL structure.<br />Works with: <strong>WooCommerce, Yoast SEO, Slim Seo, RankMath and SEOPress</strong> breadcrumbs.', 'permalink-manager')
-					)
+					),
+					'primary_category' => array(
+						'type' => 'single_checkbox',
+						'label' => __('"Primary category" support', 'permalink-manager'),
+						'input_class' => '',
+						'description' => __('If enabled, Permalink Manager will use the "primary category" for the default post permalinks.<br />Works with: <strong>Yoast SEO, The SEO Framework, RankMath and SEOPress</strong>.', 'permalink-manager')
+					),
 				)
 			),
 			'advanced' => array(
