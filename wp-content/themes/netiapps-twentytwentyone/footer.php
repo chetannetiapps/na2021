@@ -42,7 +42,7 @@
                     </div>
                     <div class="col-md-6 text-center">
                         <?php wp_nav_menu( array( 'theme_location' => 'footer-menu' )); ?>
-                        <p>© 2021 NetiApps. All Rights Reserved</p>
+                        <p>© <?php echo date('Y')?> NetiApps. All Rights Reserved</p>
                     </div>
                     <div class="col-md-3">
 
